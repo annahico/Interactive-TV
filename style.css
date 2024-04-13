@@ -41,3 +41,48 @@ body {
     padding: 10px;
     border-radius: 5px;
 }
+
+/* Estilos para el mando a distancia */ 
+.remote-control {
+    width: 30%;
+    margin: 20px auto;
+    background-color: #424242;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #666;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navigation-buttons button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #666;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.media-controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #666;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

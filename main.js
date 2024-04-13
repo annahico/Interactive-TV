@@ -38,33 +38,3 @@ function padZero(number) {
     return number < 10 ? "0" + number : number;
 }
 
-// Event listener para el botón de cambiar de canal hacia arriba
-channelUpButton.addEventListener("click", function() {
-    currentChannelIndex = (currentChannelIndex + 1) % channels.length;
-    updateTVScreen();
-});
-
-// Event listener para el botón de cambiar de canal hacia abajo
-channelDownButton.addEventListener("click", function() {
-    currentChannelIndex = (currentChannelIndex - 1 + channels.length) % channels.length;
-    updateTVScreen();
-});
-
-// Event listener para el botón de aumentar el volumen
-volumeUpButton.addEventListener("click", function() {
-    if (currentVolume < 100) {
-        currentVolume += 10; // Aumentar el volumen en 10 unidades
-        // Aquí podrías añadir funcionalidad adicional para actualizar el volumen en la interfaz
-    }
-});
-
-// Event listener para el botón de disminuir el volumen
-volumeDownButton.addEventListener("click", function() {
-    if (currentVolume > 0) {
-        currentVolume -= 10; // Disminuir el volumen en 10 unidades
-        // Aquí podrías añadir funcionalidad adicional para actualizar el volumen en la interfaz
-    }
-});
-
-// Actualizar la pantalla de televisión al cargar la página
-updateTVScreen();

@@ -66,3 +66,6 @@ volumeDownButton.addEventListener("click", function() {
     }
 });
 
+// Actualizar la pantalla de televisión al cargar la página
+updateTVScreen();
+

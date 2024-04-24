@@ -8,7 +8,15 @@ const volumeDownButton = document.getElementById("volume-down");
 
 // Array de nombres de canales simulados y nombres de imágenes correspondientes
 const channels = ["Netflix", "HBO", "Prime Video", "Disney", "SkyShowtime", "AppleTV"];
-const channelImages = ["netflix.gif", "hbo.gif", "primevi.gif", "disney.gif", "sky.gif", "apple.gif"];
+const channelImages = [
+    "netflix.gif",
+    "hbo.gif",
+    "prime.gif",
+    "disney.gif",
+    "skyshowtime.gif",
+    "appletv.gif"
+];
+
 
 // Variables para el estado actual
 let currentChannelIndex = 0;
@@ -40,19 +48,19 @@ function padZero(number) {
 }
 
 // Event listener para el botón de cambiar de canal hacia arriba
-channelUpButton.addEventListener("click", function() {
+channelUpButton.addEventListener("click", function () {
     currentChannelIndex = (currentChannelIndex + 1) % channels.length;
     updateTVScreen();
 });
 
 // Event listener para el botón de cambiar de canal hacia abajo
-channelDownButton.addEventListener("click", function() {
+channelDownButton.addEventListener("click", function () {
     currentChannelIndex = (currentChannelIndex - 1 + channels.length) % channels.length;
     updateTVScreen();
 });
 
 // Event listener para el botón de aumentar el volumen
-volumeUpButton.addEventListener("click", function() {
+volumeUpButton.addEventListener("click", function () {
     if (currentVolume < 100) {
         currentVolume += 10; // Aumentar el volumen en 10 unidades
         // Aquí podrías añadir funcionalidad adicional para actualizar el volumen en la interfaz
@@ -60,7 +68,7 @@ volumeUpButton.addEventListener("click", function() {
 });
 
 // Event listener para el botón de disminuir el volumen
-volumeDownButton.addEventListener("click", function() {
+volumeDownButton.addEventListener("click", function () {
     if (currentVolume > 0) {
         currentVolume -= 10; // Disminuir el volumen en 10 unidades
         // Aquí podrías añadir funcionalidad adicional para actualizar el volumen en la interfaz

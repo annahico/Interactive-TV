@@ -33,9 +33,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-image: url("./img/tele.jpg"); Cambiar por la imagen de fondo */
+    /* background-image: url("./img/pared.jpg");  */
     background-size: cover;
     filter: brightness(0.5);
+    background-position: center
     /* Ajustar según sea necesario */
 }
 

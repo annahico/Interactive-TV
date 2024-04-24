@@ -8,7 +8,7 @@ const volumeDownButton = document.getElementById("volume-down");
 
 // Array de nombres de canales simulados y nombres de imágenes correspondientes
 const channels = ["Netflix", "HBO", "Prime Video", "Disney", "SkyShowtime", "AppleTV"];
-const channelImages = ["netflix.gif", "hbo.jpg", "primevideo.jpg", "disney.jpg", "skyshowtime.jpg", "appletv.jpg"];
+const channelImages = ["netflix.gif", "hbo.gif", "primevi.gif", "disney.gif", "sky.gif", "apple.gif"];
 
 // Variables para el estado actual
 let currentChannelIndex = 0;

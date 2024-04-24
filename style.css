@@ -17,8 +17,10 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    margin: auto; /* Márgenes iguales en todas partes */
+    margin: auto;
+     /* Márgenes iguales en todas partes */
 }
+
 .channel-info {
     position: absolute;
     bottom: 0;
@@ -36,7 +38,8 @@ body {
     /* background-image: url("./img/pared.jpg");  */
     background-size: cover;
     filter: brightness(0.5);
-    background-position: center
+    background-position: center;
+    opacity: 0.7; /* Ajusta la opacidad del GIF para que sea semitransparente */
     /* Ajustar según sea necesario */
 }
 

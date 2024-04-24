@@ -17,7 +17,6 @@ const channelImages = [
     "./img/appletv.gif"
 ];
 
-
 // Variables para el estado actual
 let currentChannelIndex = 0;
 let currentVolume = 50; // Valor inicial del volumen

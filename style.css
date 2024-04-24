@@ -13,10 +13,11 @@ body {
     /* Ajustar según sea necesario */
     background-color: black;
     color: white;
-    text-align: end;
-    margin: 0 auto; /* Para centrar horizontalmente */
     display: flex;
-    align-items: flex-end; /* Para centrar verticalmente */
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 auto; /* Para centrar horizontalmente */
 }
 
 .channel-info {
@@ -24,6 +25,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    justify-content: flex-end;
 }
 
 .background-image {
@@ -38,22 +40,27 @@ body {
     /* Ajustar según sea necesario */
 }
 
-/* Estilos para el mando a distancia */
 .remote-control {
     display: flex;
-    justify-content: right;
-    margin-top: 20px;
-    text-align: center;
-    /* background-image: url("./img/mando.png"); Cambiar por la imagen de fondo */
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    width: 230px;
+    margin-left: auto;
+    margin-right: 20px; /* Espacio a la derecha */
 }
 
 .remote-control button {
     padding: 10px 20px;
-    margin: 0 5px;
+    margin: 5px;
     font-size: 16px;
     background-color: #ccc;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .top-buttons {
@@ -64,10 +71,9 @@ body {
     margin-top: 10px;
 }
 
-/* Estilos para los botones específicos */
 .volume-button {
     background-color: #ff9800;
+    color: white;
     /* Cambiar el color según sea necesario */
 }
-
 /* Otros estilos y ajustes aquí */

@@ -6,8 +6,9 @@ const channelDownButton = document.getElementById("channel-down");
 const volumeUpButton = document.getElementById("volume-up");
 const volumeDownButton = document.getElementById("volume-down");
 
-// Array de nombres de canales simulados
-const channels = ["Netflix", "HBO", "Prime Video", "Disney +", "SkyShowtime", "AppleTV"];
+// Array de nombres de canales simulados y nombres de imágenes correspondientes
+const channels = ["Netflix", "HBO", "Prime Video", "Disney", "SkyShowtime", "AppleTV"];
+const channelImages = ["netflix.gif", "hbo.jpg", "primevideo.jpg", "disney.jpg", "skyshowtime.jpg", "appletv.jpg"];
 
 // Variables para el estado actual
 let currentChannelIndex = 0;
@@ -18,7 +19,7 @@ function updateTVScreen() {
     currentTimeElement.textContent = getCurrentTime();
     currentDateElement.textContent = getCurrentDate();
     document.querySelector(".channel-info h1").textContent = channels[currentChannelIndex];
-    document.querySelector(".background-image").style.backgroundImage = `url("${channels[currentChannelIndex]}.jpg")`; // Cambiar la imagen de fondo según el canal
+    document.querySelector(".background-image").style.backgroundImage = `url("${channelImages[currentChannelIndex]}")`; // Cambiar la imagen de fondo según el canal
 }
 
 // Función para obtener la hora actual en formato HH:MM
@@ -88,9 +89,8 @@ function toggleTVPower() {
 }
 
 // Event listener para el botón de encendido/apagado
-powerButton.addEventListener("click", toggleTVPower);
+powerButton.addEventListener("click", toggleTVPower());
 
 
 // Actualizar la pantalla de televisión al cargar la página
 updateTVScreen();
-

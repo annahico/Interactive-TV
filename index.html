@@ -4,32 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Television Interface</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>TV Interactiva</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link>
 </head>
 
 <body>
-    <div id="container"></div>
-    <div class="tv-screen">
-        <div class="channel-info">
-            <h1>Channel Name</h1>
-            <p>Hour: <span id="current-time"></span></p>
-            <p>Date: <span id="current-date"></span></p>
-        </div>
-        <div class="background-image"></div>
-    </div>
-    <div class="remote-control">
-        <div class="top-buttons">
-            <button class="channel-button" id="channel-up">+</button>
-            <button class="channel-button" id="channel-down">-</button>
-        </div>
-        <div class="bottom-buttons">
-            <button class="volume-button" id="volume-up">Vol +</button>
-            <button class="volume-button" id="volume-down">Vol -</button>
+    <div id="container">
+        <div class="row tvAndRemote"> <!--clase dentro del container principal que contiene la fila con la televisión y el control remoto-->
+            <div class="col tvAndLegs">
+                <div id="tvborder">
+                    <div id="offScreen" class="basicScreen"> <!--"offScreen" clase de pantalla tv y "ChannelNumber dedicado al cuadro de info de canal elegido"-->
+                        <div class="selectedChannelControl">
+                            <div id="channelNumber" class="row selectedChannel" display="none"></div>
+                        </div>
+                        <div class="indexContent" id="indexContent">   <!--contenido de la pantalla de inicio de la tv. Dentro esta la imagen, el reloj y la fecha-->
+                            <div class="row clockAndWelcome">
+                                <div class="row OnPicture">
+                                    <img src="./img/nochannel.gif" id="welcomePic">
+                                    <div class="clockAndDate"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="verticalLeg"></div>
+                <div class="horizontalLeg"></div>    <!--televisión patas y borde de ésta en una misma fila con orientacion de columna-->
+            </div>
+            <div id="remote">
+                <div class="row" id="filaOnOff">
+                    <div class="col onBtn" id="onOff">O</div>
+                    <div class="col option" id="Options"></div>
+                </div>
+                <div class="row" id="filaVolumeCh">
+                    <div class="col" id="Volume">VOL</div>
+                    <div class="col" id="ChannelsNextPrev">CH</div>
+                </div>
+                <div class="row" id="filaButtons1-3">
+                    <div id="chnl1" class="button">1</div>
+                    <div id="chnl2" class="button">2</div>
+                    <div id="chnl3" class="button">3</div>
+                </div>
+                <div class="row" id="filaButtons4-6">
+                    <div id="chnl4" class="button">4</div>
+                    <div id="chnl5" class="button">5</div>
+                    <div id="chnl6" class="button">6</div>
+                </div>
+                <div class="row" id="filaButtons7-9">
+                    <div id="chnl7" class="button">7</div>
+                    <div id="chnl8" class="button">8</div>
+                    <div id="chnl9" class="button">9</div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="/js/main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

@@ -5,19 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TV Interactiva</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link href="./css/style.css" rel="stylesheet">
+    <link>
 </head>
 
 <body>
     <div id="container">
         <div class="row tvAndRemote">
+            <!--clase dentro del container principal que contiene la fila con la televisión y el control remoto-->
             <div class="col tvAndLegs">
                 <div id="tvborder">
                     <div id="offScreen" class="basicScreen">
+                        <!--"offScreen" clase de pantalla tv y "ChannelNumber dedicado al cuadro de info de canal elegido"-->
                         <div class="selectedChannelControl">
-                            <div id="channelNumber" class="row selectedChannel" style="display: none;"></div>
+                            <div id="channelNumber" class="row selectedChannel" display="none"></div>
                         </div>
                         <div class="indexContent" id="indexContent">
+                            <!--contenido de la pantalla de inicio de la tv. Dentro esta la imagen, el reloj y la fecha-->
                             <div class="row clockAndWelcome">
                                 <div class="row OnPicture">
                                     <img src="./img/nochannel.gif" id="starting">
@@ -27,8 +31,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="verticalLeg"></div>
-                <div class="horizontalLeg"></div>
             </div>
             <div id="remote">
                 <div class="row" id="filaOnOff">

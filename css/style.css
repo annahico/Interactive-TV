@@ -7,7 +7,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: rgb(254, 254, 238);
+    background-image: url(../img/pared.jpg)
 }
 
 #container {
@@ -17,12 +17,11 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: rgb(240, 240, 240);
 }
 
 #tvborder {
-    height: 30em;
-    width: 50em;
+    height: 50em;
+    width: 80em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,9 +45,9 @@ body {
 }
 
 #remote {
-    height: 22em;
-    width: 8em;
-    margin-left: 10em;
+    height: 25em;
+    width: 10em;
+    margin-left: 8em;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -106,41 +105,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-}
-
-.tvArm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.verticalLeg {
-    width: 4em;
-    height: 7em;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-}
-
-.horizontalLeg {
-    width: 18em;
-    height: 4em;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    border-radius: 40%
-}
-
-.tvAndLegs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -256,7 +220,7 @@ body {
     align-items: center;
     position: absolute;
     font-size: 2em;
-    color:white;
+    color: white;
 }
 
 .OnPicture {
@@ -293,15 +257,15 @@ body {
     align-items: center;
 }
 
-#welcomePic {
-    height: 26em;
-    width: 46em;
+#starting {
+    height: 28em;
+    width: 55em;
 
 }
 
 .selectedChannelControl {
     height: 28em;
-    width: 46em;
+    width: 60em;
     justify-content: flex-start;
     align-items: flex-start;
     position: absolute;
@@ -310,11 +274,12 @@ body {
 .portada {
     background-color: black;
 }
+
 #onOff:hover {
     color: rgb(77, 7, 7);
     transition: background-color 0.5s;
     cursor: pointer;
-    
+
 }
 
 .button:hover {

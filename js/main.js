@@ -7,7 +7,7 @@ const volumeUpButton = document.getElementById("volume-up");
 const volumeDownButton = document.getElementById("volume-down");
 
 // Array de nombres de canales simulados y nombres de imágenes correspondientes
-const channels = ["Netflix", "HBO", "Prime Video", "Disney", "SkyShowtime", "AppleTV", "Filming", "Movistar+"];
+const channels = ["Netflix", "HBO", "Prime Video", "Disney", "SkyShowtime", "AppleTV", "Filming", "Movistar+", "3CAT"];
 const channelImages = [
     "./img/netflix.gif",
     "./img/hbo.gif",
@@ -16,7 +16,8 @@ const channelImages = [
     "./img/skyshowtime.gif",
     "./img/appletv.gif",
     "./img/filming.gif",
-    "./img/movistar.gif"
+    "./img/movistar.gif",
+    "./img/3cat.gif"
 ];
 
 // Variables para el estado actual

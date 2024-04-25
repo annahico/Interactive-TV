@@ -1,75 +1,59 @@
-const buttons = document.getElementsByClassName("button")
+const buttons = document.getElementsByClassName("button");
+const offScreen = document.getElementById("offScreen");
+const indexContent = document.getElementById("indexContent");
+const powerBtn = document.getElementById("onOff");
+const selectedChannel = document.getElementsByClassName("selectedChannel");
+const clock = document.querySelector(".clockAndDate");
 
-let arrayButtons = Array.from(buttons)
-let offScreen = document.getElementById("offScreen")
-let indexContent = document.getElementById("indexContent")
+let Ontv = false;
 
-const powerBtn = document.getElementById("onOff")
-const selectedChannel = document.getElementsByClassName("selectedChannel")
-const clock = document.querySelector(".clockAndDate")
-
-let Ontv = false
-
-//Se oculta de salida la pantalla de encendido, de tal forma que solo se harávisible cuando se presione en el Powerbtn
-indexContent.style.display = "none"
+indexContent.style.display = "none";
 
 powerBtn.addEventListener("click", (e) => {
+    Ontv = !Ontv;
 
-    //Se le da valor booleano a Ontv para controlar el evento click en el boton power del mando
-    Ontv = !Ontv
-
-
-    if (Ontv === true) {
-        indexContent.style.display = "flex"
-        //mapeado el array de botones de tal forma que podamos añadir o remover clases hara dar lugar al evento "eleccion de canal"
-        arrayButtons.map(item => {
-
-            item.addEventListener("click", (evento) => {
-                if (Ontv === true) {
-                    offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1])
-                    //Remueve la clase anterior para no acumular registro de canales clickados
-
-                    offScreen.classList.add("Channel" + evento.target.id.slice(-1))
+    if (Ontv) {
+        indexContent.style.display = "flex";
+        Array.from(buttons).forEach((item) => {
+            item.addEventListener("click", (event) => {
+                if (Ontv) {
+                    offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
+                    offScreen.classList.add("Channel" + event.target.id.slice(-1));
                 }
-                //Se esconde la pantalla de inicio y después se ejecuta el número de canal en una esquina durante dos segundos mediante setTimeOut
 
-
-                if (Ontv === true) {
-                    indexContent.style.display = "none"
-
-                    channelNumber.textContent = evento.target.id.slice(-1)
+                if (Ontv) {
+                    indexContent.style.display = "none";
+                    const channelNumber = document.getElementById("channelNumber");
+                    channelNumber.textContent = event.target.id.slice(-1);
                     setTimeout(() => {
-                        channelNumber.textContent = "" //después de mostrarse el número de canal, su valor vuelve a ser el de un string vacío
-                    }, 500)
+                        channelNumber.textContent = "";
+                    }, 1000);
                 }
-            })
-        })
+            });
+        });
+    } else {
+        indexContent.style.display = "none";
+        offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
+        offScreen.classList.add("portada");
     }
-    else {
-        indexContent.style.display = "none" //si al pulsar power devuelve Ontv false, se quita la pantalla de inicio y la tv queda apagada
-        offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1])
-        offScreen.classList.add("portada")
-    }
-})
+});
 
+function updateClock() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, "0");
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const seconds = now.getSeconds().toString().padStart(2, "0");
 
-function actualizarReloj() {
-    const ahora = new Date();
-    const horas = ahora.getHours().toString().padStart(2, '0');
-    const minutos = ahora.getMinutes().toString().padStart(2, '0')
-    const segundos = ahora.getSeconds().toString().padStart(2, '0')
+    const currentTime = `${hours}:${minutes}:${seconds}`;
+    clock.textContent = currentTime;
 
-    const horaActual = `${horas}:${minutos}:${segundos}`
-    clock.textContent = horaActual;
-
-
-    const fecha = ahora.toLocaleDateString('es-ES', {
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric'
+    const date = now.toLocaleDateString("es-ES", {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric"
     });
 
-    clock.textContent += ` | ${fecha}`
+    clock.textContent += ` | ${date}`;
 }
 
-setInterval(actualizarReloj, 1000);// Actualización del reloj cada segundo
+setInterval(updateClock, 1000);

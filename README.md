@@ -22,7 +22,7 @@ El proyecto constará de las siguientes secciones:
 
 ## ⌨️ Tecnologías Utilizadas ⌨️
 
-<img align="right" src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3ywok35ynjducmohley1.gif" width="250" />
+<img align="right" src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3ywok35ynjducmohley1.gif" width="235" />
 
 Para el desarrollo del proyecto se utilizarán las siguientes tecnologías:
 
@@ -57,7 +57,7 @@ The project will consist of the following sections:
 
 ## ⌨️ Technology ⌨️
 
-<img align="right" src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3ywok35ynjducmohley1.gif" width="250" />
+<img align="right" src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3ywok35ynjducmohley1.gif" width="235" />
 
 The following technologies will be used for the development of the project:
 

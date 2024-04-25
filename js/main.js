@@ -1,22 +1,16 @@
 const buttons = document.getElementsByClassName("button")
 
 let arrayButtons = Array.from(buttons)
-
 let offScreen = document.getElementById("offScreen")
-
 let indexContent = document.getElementById("indexContent")
-//Aqui están todas las variables necesarias llamdas
+
 const powerBtn = document.getElementById("onOff")
-
 const selectedChannel = document.getElementsByClassName("selectedChannel")
-
 const clock = document.querySelector(".clockAndDate")
-
 
 let Ontv = false
 
 //Se oculta de salida la pantalla de encendido, de tal forma que solo se harávisible cuando se presione en el Powerbtn
-
 indexContent.style.display = "none"
 
 powerBtn.addEventListener("click", (e) => {
@@ -45,14 +39,14 @@ powerBtn.addEventListener("click", (e) => {
 
                     channelNumber.textContent = evento.target.id.slice(-1)
                     setTimeout(() => {
-                        channelNumber.textContent = ""     //después de mostrarse el número de canal, su valor vuelve a ser el de un string vacío
+                        channelNumber.textContent = "" //después de mostrarse el número de canal, su valor vuelve a ser el de un string vacío
                     }, 500)
                 }
             })
         })
     }
     else {
-        indexContent.style.display = "none"         //si al pulsar power devuelve Ontv false, se quita la pantalla de inicio y la tv queda apagada
+        indexContent.style.display = "none" //si al pulsar power devuelve Ontv false, se quita la pantalla de inicio y la tv queda apagada
         offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1])
         offScreen.classList.add("portada")
     }
@@ -66,9 +60,9 @@ function actualizarReloj() {
     const segundos = ahora.getSeconds().toString().padStart(2, '0')
 
     const horaActual = `${horas}:${minutos}:${segundos}`
-    clock.textContent = horaActual; // Mostrar la hora
+    clock.textContent = horaActual;
 
-    // Mostrar la fecha
+
     const fecha = ahora.toLocaleDateString('es-ES', {
         year: 'numeric',
         month: 'numeric',
@@ -78,5 +72,4 @@ function actualizarReloj() {
     clock.textContent += ` | ${fecha}`
 }
 
-// Actualización del reloj cada segundo
-setInterval(actualizarReloj, 1000);
+setInterval(actualizarReloj, 1000);// Actualización del reloj cada segundo

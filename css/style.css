@@ -37,11 +37,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid rgb(0, 0, 0)
+    border: solid black;
 }
 
 .basicScreen {
-    background-color: rgb(0, 0, 0);
+    background-color: black;
 }
 
 #remote {
@@ -116,7 +116,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: rgb(222, 10, 10);
+    background-color: green;
     color: white;
     margin-top: 0.5em;
     margin-left: 0.5em
@@ -134,8 +134,8 @@ body {
 }
 
 #Volume {
-    height: 4.4em;
-    width: 2.2em;
+    height: 5em;
+    width: 3em;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -145,8 +145,8 @@ body {
 }
 
 #ChannelsNextPrev {
-    height: 4.4em;
-    width: 2.2em;
+    height: 5em;
+    width: 3em;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -156,8 +156,8 @@ body {
 }
 
 .button {
-    height: 2em;
-    width: 2em;
+    height: 3em;
+    width: 3em;
     background-color: rgb(52, 52, 52);
     border-radius: 50%;
     color: white;
@@ -169,46 +169,63 @@ body {
 .Channel1 {
     background-image: url("../img/netflix.gif");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .Channel2 {
     background-image: url("../img/hbo.gif");
-    background-size: cover;
+    background-size: 100% 100%;
+    min-height: 40em;
+    background-repeat: no-repeat;
 }
 
 .Channel3 {
     background-image: url("../img/prime.gif");
-    background-size: cover;
+    background-size: 100% 100%;
+    min-height: 40em;
+    background-repeat: no-repeat;
 }
 
 .Channel4 {
     background-image: url("../img/disney.gif");
-    background-size: cover;
+    background-size: 100% 100%;
+    min-height: 40em;
+    background-repeat: no-repeat;
 }
 
 .Channel5 {
     background-image: url("../img/skyshowtime.gif");
-    background-size: cover;
+    background-size: 100% 100%;
+    min-height: 40em;
+    background-repeat: no-repeat;
 }
 
 .Channel6 {
     background-image: url("../img/appletv.gif");
-    background-size: cover;
+    background-size: 100% 100%;
+    min-height: 40em;
+    background-repeat: no-repeat;
 }
 
 .Channel7 {
     background-image: url("../img/filming.gif");
-    background-size: cover;
+    background-size: 100% 100%;
+    min-height: 40em;
+    background-repeat: no-repeat;
 }
 
 .Channel8 {
     background-image: url("../img/movistar.gif");
-    background-size: cover;
+    background-size: 100% 100%;
+    min-height: 40em;
+    background-repeat: no-repeat;
 }
 
 .Channel9 {
     background-image: url("../img/3cat.gif");
-    background-size: cover;
+    background-size: 100% 100%;
+    min-height: 40em;
+    background-repeat: no-repeat;;
 }
 
 .clockAndDate {
@@ -276,7 +293,7 @@ body {
 }
 
 #onOff:hover {
-    color: rgb(77, 7, 7);
+    color: darkred;
     transition: background-color 0.5s;
     cursor: pointer;
 

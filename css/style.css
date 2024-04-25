@@ -7,7 +7,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-image: url("../img/pared.jpg");
+    background-color: rgb(254, 254, 238);
 }
 
 #container {
@@ -17,6 +17,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: rgb(240, 240, 240);
 }
 
 #tvborder {
@@ -203,38 +204,47 @@ body {
 
 .Channel1 {
     background-image: url("../img/netflix.gif");
+    background-size: cover;
 }
 
 .Channel2 {
-    background-color: url("../img/hbo.gif");
+    background-image: url("../img/hbo.gif");
+    background-size: cover;
 }
 
 .Channel3 {
-    background-color: url("../img/prime.gif");
+    background-image: url("../img/prime.gif");
+    background-size: cover;
 }
 
 .Channel4 {
-    background-color: url("../img/disney.gif");
+    background-image: url("../img/disney.gif");
+    background-size: cover;
 }
 
 .Channel5 {
-    background-color: url("../img/skyshowtime.gif");
+    background-image: url("../img/skyshowtime.gif");
+    background-size: cover;
 }
 
 .Channel6 {
-    background-color: url("../img/appletv.gif");
+    background-image: url("../img/appletv.gif");
+    background-size: cover;
 }
 
 .Channel7 {
-    background-color: url("../img/filming.gif");
+    background-image: url("../img/filming.gif");
+    background-size: cover;
 }
 
 .Channel8 {
-    background-color: url("../img/movistar.gif");
+    background-image: url("../img/movistar.gif");
+    background-size: cover;
 }
 
 .Channel9 {
-    background-color: url("../img/3cat.gif");
+    background-image: url("../img/3cat.gif");
+    background-size: cover;
 }
 
 .clockAndDate {
@@ -246,6 +256,7 @@ body {
     align-items: center;
     position: absolute;
     font-size: 2em;
+    color:white;
 }
 
 .OnPicture {

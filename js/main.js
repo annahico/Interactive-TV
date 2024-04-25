@@ -1,106 +1,82 @@
-// Obtener referencias a elementos HTML
-const currentTimeElement = document.getElementById("current-time");
-const currentDateElement = document.getElementById("current-date");
-const channelUpButton = document.getElementById("channel-up");
-const channelDownButton = document.getElementById("channel-down");
-const volumeUpButton = document.getElementById("volume-up");
-const volumeDownButton = document.getElementById("volume-down");
+const buttons = document.getElementsByClassName("button")
 
-// Array de nombres de canales simulados y nombres de imágenes correspondientes
-const channels = ["Netflix", "HBO", "Prime Video", "Disney", "SkyShowtime", "AppleTV", "Filming", "Movistar+", "3CAT"];
-const channelImages = [
-    "./img/netflix.gif",
-    "./img/hbo.gif",
-    "./img/prime.gif",
-    "./img/disney.gif",
-    "./img/skyshowtime.gif",
-    "./img/appletv.gif",
-    "./img/filming.gif",
-    "./img/movistar.gif",
-    "./img/3cat.gif"
-];
+let arrayButtons = Array.from(buttons)
 
-// Variables para el estado actual
-let currentChannelIndex = 0;
-let currentVolume = 50; // Valor inicial del volumen
+let offScreen = document.getElementById("offScreen")
 
-// Función para actualizar la pantalla de televisión
-function updateTVScreen() {
-    currentTimeElement.textContent = getCurrentTime();
-    currentDateElement.textContent = getCurrentDate();
-    document.querySelector(".channel-info h1").textContent = channels[currentChannelIndex];
-    document.querySelector(".background-image").style.backgroundImage = `url("${channelImages[currentChannelIndex]}")`; // Cambiar la imagen de fondo según el canal
-}
+let indexContent = document.getElementById("indexContent")
+//Aqui están todas las variables necesarias llamdas
+const powerBtn = document.getElementById("onOff")
 
-// Función para obtener la hora actual en formato HH:MM
-function getCurrentTime() {
-    const now = new Date();
-    return `${padZero(now.getHours())}:${padZero(now.getMinutes())}`;
-}
+const selectedChannel = document.getElementsByClassName("selectedChannel")
 
-// Función para obtener la fecha actual en formato DD/MM/AAAA
-function getCurrentDate() {
-    const now = new Date();
-    return `${padZero(now.getDate())}/${padZero(now.getMonth() + 1)}/${now.getFullYear()}`;
-}
+const clock = document.querySelector(".clockAndDate")
 
-// Función para agregar un cero delante de un número si es menor que 10
-function padZero(number) {
-    return number < 10 ? "0" + number : number;
-}
 
-// Event listener para el botón de cambiar de canal hacia arriba
-channelUpButton.addEventListener("click", function () {
-    currentChannelIndex = (currentChannelIndex + 1) % channels.length;
-    updateTVScreen();
-});
+let Ontv = false
 
-// Event listener para el botón de cambiar de canal hacia abajo
-channelDownButton.addEventListener("click", function () {
-    currentChannelIndex = (currentChannelIndex - 1 + channels.length) % channels.length;
-    updateTVScreen();
-});
+//Se oculta de salida la pantalla de encendido, de tal forma que solo se harávisible cuando se presione en el Powerbtn
 
-// Event listener para el botón de aumentar el volumen
-volumeUpButton.addEventListener("click", function () {
-    if (currentVolume < 100) {
-        currentVolume += 10; // Aumentar el volumen en 10 unidades
-        // Aquí podrías añadir funcionalidad adicional para actualizar el volumen en la interfaz
+indexContent.style.display = "none"
+
+powerBtn.addEventListener("click", (e) => {
+
+    //Se le da valor booleano a Ontv para controlar el evento click en el boton power del mando
+    Ontv = !Ontv
+
+
+    if (Ontv === true) {
+        indexContent.style.display = "flex"
+        //mapeado el array de botones de tal forma que podamos añadir o remover clases hara dar lugar al evento "eleccion de canal"
+        arrayButtons.map(item => {
+
+            item.addEventListener("click", (evento) => {
+                if (Ontv === true) {
+                    offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1])
+                    //Remueve la clase anterior para no acumular registro de canales clickados
+
+                    offScreen.classList.add("Channel" + evento.target.id.slice(-1))
+                }
+                //Se esconde la pantalla de inicio y después se ejecuta el número de canal en una esquina durante dos segundos mediante setTimeOut
+
+
+                if (Ontv === true) {
+                    indexContent.style.display = "none"
+
+                    channelNumber.textContent = evento.target.id.slice(-1)
+                    setTimeout(() => {
+                        channelNumber.textContent = ""     //después de mostrarse el número de canal, su valor vuelve a ser el de un string vacío
+                    }, 500)
+                }
+            })
+        })
     }
-});
-
-// Event listener para el botón de disminuir el volumen
-volumeDownButton.addEventListener("click", function () {
-    if (currentVolume > 0) {
-        currentVolume -= 10; // Disminuir el volumen en 10 unidades
-        // Aquí podrías añadir funcionalidad adicional para actualizar el volumen en la interfaz
+    else {
+        indexContent.style.display = "none"         //si al pulsar power devuelve Ontv false, se quita la pantalla de inicio y la tv queda apagada
+        offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1])
+        offScreen.classList.add("portada")
     }
-});
+})
 
-// Obtener referencia al botón de encendido/apagado
-const powerButton = document.getElementById("power-button");
 
-// Variable para controlar el estado de la televisión (encendida o apagada)
-let isTVOn = true;
+function actualizarReloj() {
+    const ahora = new Date();
+    const horas = ahora.getHours().toString().padStart(2, '0');
+    const minutos = ahora.getMinutes().toString().padStart(2, '0')
+    const segundos = ahora.getSeconds().toString().padStart(2, '0')
 
-// Función para encender/apagar la televisión
-function toggleTVPower() {
-    isTVOn = !isTVOn; // Cambiar el estado de la televisión
-    if (isTVOn) {
-        // Si la televisión está encendida, mostrar la pantalla y habilitar los botones del mando
-        document.querySelector(".tv-screen").style.display = "block";
-        document.querySelector(".remote-control").style.display = "flex";
-        updateTVScreen(); // Actualizar la pantalla de televisión
-    } else {
-        // Si la televisión está apagada, ocultar la pantalla y deshabilitar los botones del mando
-        document.querySelector(".tv-screen").style.display = "none";
-        document.querySelector(".remote-control").style.display = "none";
-    }
+    const horaActual = `${horas}:${minutos}:${segundos}`
+    clock.textContent = horaActual; // Mostrar la hora
+
+    // Mostrar la fecha
+    const fecha = ahora.toLocaleDateString('es-ES', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric'
+    });
+
+    clock.textContent += ` | ${fecha}`
 }
 
-// Event listener para el botón de encendido/apagado
-powerButton.addEventListener("click", toggleTVPower());
-
-
-// Actualizar la pantalla de televisión al cargar la página
-updateTVScreen();
+// Actualización del reloj cada segundo
+setInterval(actualizarReloj, 1000);

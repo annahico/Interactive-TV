@@ -31,8 +31,8 @@ body {
 }
 
 #offScreen {
-    height: 26em;
-    width: 46em;
+    height: 45em;
+    width: 75em;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,8 +1,24 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(254, 254, 238);
+}
+
+#container {
+    height: 43em;
+    width: 86em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
 }
 
 /* Estilos para la pantalla de televisión */

@@ -16,19 +16,15 @@ powerBtn.addEventListener("click", (e) => {
         indexContent.style.display = "flex";
         Array.from(buttons).forEach((item) => {
             item.addEventListener("click", (event) => {
-                if (Ontv) {
-                    offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
-                    offScreen.classList.add("Channel" + event.target.id.slice(-1));
-                }
+                offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
+                offScreen.classList.add("Channel" + event.target.id.slice(-1));
 
-                if (Ontv) {
-                    indexContent.style.display = "none";
-                    const channelNumber = document.getElementById("channelNumber");
-                    channelNumber.textContent = event.target.id.slice(-1);
-                    setTimeout(() => {
-                        channelNumber.textContent = "";
-                    }, 1000);
-                }
+                indexContent.style.display = "none";
+                const channelNumber = document.getElementById("channelNumber");
+                channelNumber.textContent = event.target.id.slice(-1);
+                setTimeout(() => {
+                    channelNumber.textContent = "";
+                }, 1000);
             });
         });
     } else {

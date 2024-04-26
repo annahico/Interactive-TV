@@ -2,8 +2,6 @@ CAST / ENG
 
 # 🖥️​ TELEVISIÓN INTERACTIVA 🖥️​  
 
-<img align="right" src="https://i.pinimg.com/originals/4d/d4/be/4dd4be1f8743b2cd96960292429edbb3.gif" width="160" />
-
 En este proyecto, propongo desarrollar una interfaz de televisión interactiva con un control remoto utilizando tecnologías web como HTML, CSS y JavaScript. Mi objetivo principal es crear una experiencia de usuario intuitiva y funcional que simule la interacción con una televisión real.
 
 ## 📑 Descripción del Proyecto 📑
@@ -36,8 +34,6 @@ Para el desarrollo del proyecto se utilizarán las siguientes tecnologías:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 🖥️​ INTERACTIVE TELEVISION 🖥️​ 
-
-<img align="right" src="https://i.pinimg.com/originals/4d/d4/be/4dd4be1f8743b2cd96960292429edbb3.gif" width="160" />
 
 In this project, I propose the development of an interactive television interface with a remote control using web technologies such as HTML, CSS, and JavaScript. The main goal is to create an intuitive and functional user experience that simulates interaction with a real television.
 

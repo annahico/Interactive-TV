@@ -26,10 +26,10 @@ powerBtn.addEventListener("click", (e) => { //Se agrega un "escuchador de evento
 
 Array.from(buttons).forEach((item) => { //Se itera sobre cada botón obtenido en la variable buttons. Por cada botón, se agrega un "escuchador de eventos" para manejar el clic del usuario.
     item.addEventListener("click", (event) => {
-        if (Ontv) {
-            const channelNumber = event.target.id.slice(-1);
-            offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
-            offScreen.classList.add("Channel" + channelNumber);
+        if (Ontv) { //Este es un bloque condicional que verifica si la variable Ontv tiene un valor verdadero. Dependiendo del lenguaje de programación, Ontv podría ser una variable booleana que indica si el televisor está encendido (true) o apagado (false).
+            const channelNumber = event.target.id.slice(-1); //Aquí se está extrayendo el número de canal del evento que desencadenó esta porción de código. La variable event generalmente se refiere al evento que ocurre en la interfaz de usuario (como un clic, por ejemplo), y event.target.id se refiere al identificador del elemento que desencadenó el evento. .slice(-1) se utiliza para tomar el último carácter del identificador, lo que en este caso probablemente represente el número del canal.
+            offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]); //: Esto parece estar eliminando la última clase de la lista de clases del elemento offScreen. classList es una propiedad de los elementos del DOM que devuelve una colección en vivo de las clases del elemento. classList.remove() elimina una clase específica del elemento. En este caso, parece que están eliminando la última clase de offScreen.
+            offScreen.classList.add("Channel" + channelNumber); //Aquí se agrega una nueva clase al elemento offScreen. La clase que se agrega parece estar formada concatenando la cadena "Channel" con el número de canal obtenido anteriormente. Por lo tanto, esta línea de código probablemente está cambiando la apariencia o el comportamiento del elemento offScreen para que refleje el canal que se está seleccionando o visualizando en el televisor.
 
             const channelName = getChannelName(channelNumber); // Obtener el nombre del canal
             updateDisplay(channelNumber, channelName); // Actualizar la pantalla con el nombre del canal

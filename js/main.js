@@ -15,26 +15,29 @@ powerBtn.addEventListener("click", (e) => {
     if (Ontv) {
         indexContent.style.display = "flex";
         offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
-        Array.from(buttons).forEach((item) => {
-            item.addEventListener("click", (event) => {
-                const channelNumber = event.target.id.slice(-1);
-                offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
-                offScreen.classList.add("Channel" + channelNumber);
-
-                const channelName = getChannelName(channelNumber); // Obtener el nombre del canal
-                updateDisplay(channelNumber, channelName); // Actualizar la pantalla con el nombre del canal
-
-                setTimeout(() => {
-                    indexContent.style.display = "none";
-                });
-            });
-        });
+        updateDisplay(); // Mostrar la hora actual al encender la TV
     } else {
         indexContent.style.display = "none";
         offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
         offScreen.classList.add("portada");
-        updateDisplay(); // Limpiar el texto del canal cuando la TV está apagada
     }
+});
+
+Array.from(buttons).forEach((item) => {
+    item.addEventListener("click", (event) => {
+        if (Ontv) {
+            const channelNumber = event.target.id.slice(-1);
+            offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
+            offScreen.classList.add("Channel" + channelNumber);
+
+            const channelName = getChannelName(channelNumber); // Obtener el nombre del canal
+            updateDisplay(channelNumber, channelName); // Actualizar la pantalla con el nombre del canal
+
+            setTimeout(() => {
+                indexContent.style.display = "none";
+            });
+        }
+    });
 });
 
 function getChannelName(channelNumber) {

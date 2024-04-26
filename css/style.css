@@ -210,13 +210,14 @@ body {
 }
 
 .OnPicture {
-    max-width: 14em;
-    max-height: 8em;
+    width: 30em; /* Ajusta el ancho máximo según sea necesario */
+    height: 16em; /* Ajusta la altura máxima según sea necesario */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
+
 
 .clockAndWelcome {
     display: flex;

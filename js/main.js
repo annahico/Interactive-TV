@@ -16,15 +16,16 @@ powerBtn.addEventListener("click", (e) => {
         indexContent.style.display = "flex";
         Array.from(buttons).forEach((item) => {
             item.addEventListener("click", (event) => {
+                const channelNumber = event.target.id.slice(-1);
                 offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
-                offScreen.classList.add("Channel" + event.target.id.slice(-1));
+                offScreen.classList.add("Channel" + channelNumber);
 
-                indexContent.style.display = "none";
-                const channelNumber = document.getElementById("channelNumber");
-                channelNumber.textContent = event.target.id.slice(-1);
+                const channelName = getChannelName(channelNumber); // Obtener el nombre del canal
+                updateDisplay(channelNumber, channelName); // Actualizar la pantalla con el nombre del canal y la hora
+
                 setTimeout(() => {
-                    channelNumber.textContent = "";
-                }, 1000);
+                    indexContent.style.display = "none";
+                });
             });
         });
     } else {
@@ -34,22 +35,46 @@ powerBtn.addEventListener("click", (e) => {
     }
 });
 
-function updateClock() {
+function getChannelName(channelNumber) {
+    switch (channelNumber) {
+        case "1":
+            return "Netflix";
+        case "2":
+            return "HBO";
+        case "3":
+            return "Amazon Prime";
+        case "4":
+            return "Disney+";
+        case "5":
+            return "Sky Showtime";
+        case "6":
+            return "Apple TV+";
+        case "7":
+            return "Filming Channel";
+        case "8":
+            return "Movistar+";
+        case "9":
+            return "3cat";
+        default:
+            return "Unknown Channel";
+    }
+}
+
+function updateDisplay(channelNumber, channelName) {
+    const channelNumberElement = document.getElementById("channelNumber");
+    const clockAndDateElement = document.querySelector(".clockAndDate");
+
+    channelNumberElement.textContent = `${channelNumber}: ${channelName}`; // Mostrar el número y el nombre del canal
+    clockAndDateElement.textContent = getCurrentTime(); // Actualizar la hora
+}
+
+function getCurrentTime() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, "0");
     const minutes = now.getMinutes().toString().padStart(2, "0");
     const seconds = now.getSeconds().toString().padStart(2, "0");
 
     const currentTime = `${hours}:${minutes}:${seconds}`;
-    clock.textContent = currentTime;
 
-    const date = now.toLocaleDateString("es-ES", {
-        year: "numeric",
-        month: "numeric",
-        day: "numeric"
-    });
-
-    clock.textContent += ` | ${date}`;
+    return currentTime;
 }
-
-setInterval(updateClock, 1000);

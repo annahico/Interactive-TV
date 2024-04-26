@@ -14,6 +14,7 @@ powerBtn.addEventListener("click", (e) => {
 
     if (Ontv) {
         indexContent.style.display = "flex";
+        offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
         Array.from(buttons).forEach((item) => {
             item.addEventListener("click", (event) => {
                 const channelNumber = event.target.id.slice(-1);
@@ -21,7 +22,7 @@ powerBtn.addEventListener("click", (e) => {
                 offScreen.classList.add("Channel" + channelNumber);
 
                 const channelName = getChannelName(channelNumber); // Obtener el nombre del canal
-                updateDisplay(channelNumber, channelName); // Actualizar la pantalla con el nombre del canal y la hora
+                updateDisplay(channelNumber, channelName); // Actualizar la pantalla con el nombre del canal
 
                 setTimeout(() => {
                     indexContent.style.display = "none";
@@ -32,6 +33,7 @@ powerBtn.addEventListener("click", (e) => {
         indexContent.style.display = "none";
         offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
         offScreen.classList.add("portada");
+        updateDisplay(); // Limpiar el texto del canal cuando la TV está apagada
     }
 });
 
@@ -62,19 +64,31 @@ function getChannelName(channelNumber) {
 
 function updateDisplay(channelNumber, channelName) {
     const channelNumberElement = document.getElementById("channelNumber");
-    const clockAndDateElement = document.querySelector(".clockAndDate");
 
-    channelNumberElement.textContent = `${channelNumber}: ${channelName}`; // Mostrar el número y el nombre del canal
-    clockAndDateElement.textContent = getCurrentTime(); // Actualizar la hora
+    if (channelNumber && channelName) {
+        channelNumberElement.textContent = `${channelNumber}: ${channelName}`; // Mostrar el número y el nombre del canal
+    } else {
+        channelNumberElement.textContent = ""; // Limpiar el texto del canal cuando la TV está apagada
+    }
 }
 
-function getCurrentTime() {
+function updateClock() {
     const now = new Date();
     const hours = now.getHours().toString().padStart(2, "0");
     const minutes = now.getMinutes().toString().padStart(2, "0");
     const seconds = now.getSeconds().toString().padStart(2, "0");
+    const date = now.toLocaleDateString("es-ES", {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric"
+    });
 
     const currentTime = `${hours}:${minutes}:${seconds}`;
+    clock.textContent = currentTime;
 
-    return currentTime;
+    if (Ontv) {
+        clock.textContent += ` | ${date}`; // Mostrar la fecha solo cuando la TV está encendida
+    }
 }
+
+setInterval(updateClock, 1000);

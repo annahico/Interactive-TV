@@ -18,7 +18,7 @@ powerBtn.addEventListener("click", (e) => { //Se agrega un "escuchador de evento
         updateDisplay(); // Esta función se llama después de cambiar el estado de la televisión (Ontv) y manipular la visualización de indexContent y las clases de offScreen. En el contexto del código proporcionado, se llama tanto cuando la televisión se enciende como cuando se apaga. Cuando la televisión se enciende, se usa para mostrar la hora actual en la pantalla. Cuando la televisión se apaga, se utiliza para limpiar el texto del canal mostrado en la pantalla.
     } else {
         indexContent.style.display = "none"; //Si Ontv es false, esta línea establece el estilo de visualización del elemento indexContent en "none", lo que oculta el contenido dentro de indexContent al apagar la televisión.
-        offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]); 
+        offScreen.classList.remove(offScreen.classList[offScreen.classList.length - 1]);
         offScreen.classList.add("portada"); //Si Ontv es false, esta línea añade la clase "portada" al atributo class del elemento offScreen. Esto probablemente aplica algún estilo específico destinado a mostrar una pantalla de inicio o portada cuando la televisión está apagada.
         updateDisplay(); // Limpiar el texto del canal cuando la TV está apagada
     }

@@ -210,8 +210,10 @@ body {
 }
 
 .OnPicture {
-    width: 30em; /* Ajusta el ancho máximo según sea necesario */
-    height: 16em; /* Ajusta la altura máxima según sea necesario */
+    width: 30em;
+    /* Ajusta el ancho máximo según sea necesario */
+    height: 16em;
+    /* Ajusta la altura máxima según sea necesario */
     display: flex;
     justify-content: center;
     align-items: center;

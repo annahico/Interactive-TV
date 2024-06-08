@@ -59,6 +59,19 @@ The following technologies will be used for the development of the project:
 
 - ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)  : For the structure and content of web pages.
 
+- ***
+
+## Link :dart:
+
+https://github.com/annahico/PROJECT-Backend.git
+
+***
+## Author :wave:
+
+- **Anna Hidalgo Costa**
+- [GitHub](https://github.com/annahico) - [LinkedIn](https://www.linkedin.com/in/annahico/)
+
+
 - ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) : For the design and visual presentation of the pages.
 
 - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) : Para crear funciones dinámicas interactivas.
